@@ -70,4 +70,9 @@ public class Queue {
         }
     }
     
+    public void peek()
+    {
+        
+    }
+    
 }
