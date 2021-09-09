@@ -22,6 +22,7 @@ public class Queue {
             front = (front+1)%values.length;
             rear = (rear + 1)%values.length;
             values[rear] = num;
+            throw new StackException("Stack Full");
         }
         else
         {
@@ -36,10 +37,16 @@ public class Queue {
     
     public void get()
     {
-        for(int i = 0; i<values.length;i++)
+        if(isEmpty())
         {
-            System.out.printf("%d ",values[i]);
-        }  
+            throw new QueueException("Queue Empty");
+        }
+        else{
+            for(int i = 0; i<values.length;i++)
+            {
+                System.out.printf("%d ",values[i]);
+            }
+        }   
     }
     
     public boolean isEmpty()
